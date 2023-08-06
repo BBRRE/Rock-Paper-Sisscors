@@ -1,4 +1,4 @@
-let answer = prompt("Rock Paper or Scissors").toLowerCase
+let answer = prompt("Rock Paper or Scissors").toLowerCase()
 
 function getComputerChoice(){
     arr = ["rock","paper","scissors"]
@@ -7,11 +7,17 @@ function getComputerChoice(){
  
 function playRound(playerSelection,computerSelection){
     if (playerSelection === computerSelection){
-        console.log("Draw")
+        console.log("Draw!")
     }
-    else {
-        console.log("idk")
+    else if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "rock"  ){
+        console.log("You win! " + playerSelection + " beats " + computerSelection)
+    }
+    else{
+        console.log("You loose! " + computerSelection + " beats " + playerSelection)
     }
 }
+let comp = getComputerChoice()
 
-console.log(playRound(answer,"paper"))
+console.log("Your answer " + answer)
+console.log("Computer answer " + comp)
+console.log(playRound(answer,comp))
